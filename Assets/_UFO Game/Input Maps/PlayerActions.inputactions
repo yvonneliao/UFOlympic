@@ -27,7 +27,7 @@
                     "name": "Right",
                     "type": "Value",
                     "id": "79b34d90-200f-4bfc-9097-03404d3d7fa0",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -73,7 +73,7 @@
                 {
                     "name": "",
                     "id": "d1e7e1ab-5846-4e6a-a90d-23edb9b90932",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -84,7 +84,7 @@
                 {
                     "name": "",
                     "id": "90c45765-e36f-4d5f-9183-9f7225989b36",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -95,7 +95,7 @@
                 {
                     "name": "",
                     "id": "2011f1f0-3ccf-4f65-a987-4e7db1f9d4b9",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -106,7 +106,7 @@
                 {
                     "name": "",
                     "id": "90d827e4-ded3-4e36-876a-86ec0a72f571",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -117,7 +117,7 @@
                 {
                     "name": "",
                     "id": "c5598334-3bfa-4b53-bba9-5c87704ca4b7",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/upArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

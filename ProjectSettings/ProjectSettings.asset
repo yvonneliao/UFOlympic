@@ -895,8 +895,8 @@ PlayerSettings:
   cloudProjectId: b455fb63-f39f-43de-bc69-13a3a84e107a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: UFO-v1
-  organizationId: yvonneliao
+  projectName: UFOlympic
+  organizationId: f764d5e6-d25c-4128-0000-12400bbd647c
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
