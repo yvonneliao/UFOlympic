@@ -1,44 +1,67 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
 
 public class myScoreManager : MonoBehaviour
 {
-    public static myScoreManager _Instance { get; private set; }
+    public static myScoreManager _instance { get; private set; }
 
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private GameObject _gameManager;
+    [SerializeField] private GameObject _deductionAlert;
     [SerializeField] private int _score = 0;
+
+    private int _deductionCount = 0;
+    private Coroutine _alertCoroutine;
 
     private void Awake()
     {
-        if (_Instance != null && _Instance != this)
+        if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
             return;
         }
-        _Instance = this;
+        _instance = this;
 
         if (_gameManager == null)
         {
             _gameManager = GameObject.Find("Game Manager");
         }
 
-        _UpdateUI();
+        if (_deductionAlert != null)
+        {
+            _deductionAlert.SetActive(false);
+        }
+
+        _updateUI();
     }
 
-    public static void _AddScore(int _amount)
+    public static void _addScore(int _amount)
     {
-        if (_Instance != null)
+        if (_instance != null)
         {
-            _Instance._ModifyScore(_amount);
+            _instance._modifyScore(_amount);
         }
     }
 
-    public void _ModifyScore(int _amount)
+    public void _modifyScore(int _amount)
     {
         _score += _amount;
-        _UpdateUI();
+        _updateUI();
+
+        if (_amount < 0 && _deductionCount < 3)
+        {
+            _deductionCount++;
+            if (_deductionAlert != null)
+            {
+                if (_alertCoroutine != null)
+                {
+                    StopCoroutine(_alertCoroutine);
+                }
+                _alertCoroutine = StartCoroutine(_blinkAlertRoutine());
+            }
+        }
 
         if (_score < 0)
         {
@@ -49,7 +72,23 @@ public class myScoreManager : MonoBehaviour
         }
     }
 
-    private void _UpdateUI()
+    private IEnumerator _blinkAlertRoutine()
+    {
+        // Blink once across 0.5s
+        _deductionAlert.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        _deductionAlert.SetActive(false);
+        yield return new WaitForSeconds(0.25f);
+
+        // Hold visible for 2 seconds
+        _deductionAlert.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+
+        // Disappear
+        _deductionAlert.SetActive(false);
+    }
+
+    private void _updateUI()
     {
         if (_scoreText != null)
         {
@@ -62,7 +101,7 @@ public class myScoreManager : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            _UpdateUI();
+            _updateUI();
             if (_score < 0)
             {
                 if (_gameManager != null)
@@ -74,9 +113,9 @@ public class myScoreManager : MonoBehaviour
     }
 
     [ContextMenu("Test Add -50 Points")]
-    private void _ContextMenuSubtract50()
+    private void _contextMenuSubtract50()
     {
-        _ModifyScore(-50);
+        _modifyScore(-50);
     }
 #endif
 }
