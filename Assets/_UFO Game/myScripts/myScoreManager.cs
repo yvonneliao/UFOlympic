@@ -50,7 +50,7 @@ public class myScoreManager : MonoBehaviour
         _score += _amount;
         _updateUI();
 
-        if (_amount < 0 && _deductionCount < 3)
+        if (_amount < 0 && _deductionCount < 100)
         {
             _deductionCount++;
             if (_deductionAlert != null)
