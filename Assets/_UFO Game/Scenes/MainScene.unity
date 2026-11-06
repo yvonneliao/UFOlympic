@@ -25770,7 +25770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055734365}
   m_Layer: 0
-  m_Name: Farm
+  m_Name: Architecture
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26344,12 +26344,12 @@ PrefabInstance:
     - target: {fileID: 755576077864586133, guid: 34eaffaee21765547bd484480e84cd04,
         type: 3}
       propertyPath: m_Name
-      value: Farmer
+      value: Guardian
       objectReference: {fileID: 0}
     - target: {fileID: 755576077864586133, guid: 34eaffaee21765547bd484480e84cd04,
         type: 3}
       propertyPath: m_TagString
-      value: Farmer
+      value: Guardian
       objectReference: {fileID: 0}
     - target: {fileID: 978928925093454167, guid: 34eaffaee21765547bd484480e84cd04,
         type: 3}

@@ -9,6 +9,8 @@ TagManager:
   - Farmer
   - CutScene
   - WorldspaceUI
+  - Guardian
+  - Prey
   layers:
   - Default
   - TransparentFX

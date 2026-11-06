@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 3661174382921753616}
   - component: {fileID: 2552587684422748719}
   m_Layer: 31
-  m_Name: Sheep
+  m_Name: Prey2
   m_TagString: Sheep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
