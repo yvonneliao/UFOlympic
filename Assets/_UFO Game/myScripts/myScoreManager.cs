@@ -74,19 +74,25 @@ public class myScoreManager : MonoBehaviour
 
     private IEnumerator _blinkAlertRoutine()
     {
-        // Blink once across 0.5s
-        _deductionAlert.SetActive(true);
-        yield return new WaitForSeconds(0.25f);
-        _deductionAlert.SetActive(false);
-        yield return new WaitForSeconds(0.25f);
+        float _blinkInterval = 0.16f;
 
-        // Hold visible for 2 seconds
+        // Blink twice quickly
+        for (int i = 0; i < 2; i++)
+        {
+            _deductionAlert.SetActive(true);
+            yield return new WaitForSeconds(_blinkInterval);
+            _deductionAlert.SetActive(false);
+            yield return new WaitForSeconds(_blinkInterval);
+        }
+
+        // Hold visible
         _deductionAlert.SetActive(true);
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(3.0f);
 
         // Disappear
         _deductionAlert.SetActive(false);
     }
+
 
     private void _updateUI()
     {
